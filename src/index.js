@@ -1,5 +1,5 @@
-import './style.css';
-import home from './home';
+import '../src/Home/home.css';
+import home from './Home/home';
 
 const content = document.querySelector('.content');
 
@@ -21,8 +21,16 @@ const createNav = () => {
     return nav;
 }
 
+const createFooter = () => {
+    const footer = document.createElement('footer');
+    footer.innerHTML = '©2022 Made with <span></span> by Uriel stamelman<';
+
+    return footer;
+}
+
 content.appendChild(createNav());
 content.appendChild(home());
+content.appendChild(createFooter());
 
 const tags = document.querySelector('.tags');
 tags.addEventListener('click', (e) => {

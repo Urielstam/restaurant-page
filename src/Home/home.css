@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@300;400;700;900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+body, html {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Courgette', cursive;
+}
+
+.content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 1rem;
+    position: fixed;
+}
+
+.tags {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.tags p {
+    display: block;
+    color: #DC3535;
+    text-decoration: none;
+    position: relative;
+}
+
+.tags p::after{
+    content: "";
+    background: #DC3535;
+    mix-blend-mode: exclusion;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+      transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  }
+  
+  .tags p:hover::after{
+    height: calc(100% + 8px)
+  }
+
+.hero {
+    color: white;
+    padding: 4rem;
+    flex-wrap: wrap;
+    height: 60vh;
+    background-image:
+    /* linear-gradient(black, rgba(0, 0, 0, 0.2)), */
+    url(https://images.pexels.com/photos/6876075/pexels-photo-6876075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-position: 90% 30%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: saturation;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+
+}
+
+.hero h1 {
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.hero p {
+    font-size: 2rem;
+}
+
+
+.grid-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    width: 80%;
+    padding-top: 4rem;
+    display: grid;
+    grid-template: 250px 250px / 1fr 1fr;
+    gap: 10px;
+}
+
+.cell {
+    font-size: 2rem;
+    color: white;
+    padding: 1rem;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+}
+
+.img1 {
+    grid-row: 1 / -1;
+    background-image: url(https://images.unsplash.com/photo-1616141032335-7e6b413f93ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img2 {
+    background-image: url(https://images.unsplash.com/photo-1616141215340-34b0e7c661c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+    background-position: 100% 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img3 {
+    background-image: url(https://images.unsplash.com/photo-1613564834361-9436948817d1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=743&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: start;
+    align-items: end;
+
+}
+
+.about {
+    height: 500px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-image: url(https://cdn.pixabay.com/photo/2020/03/25/21/05/pizza-4968645_960_720.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 4rem;
+    padding: 2rem;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+
+}
+
+.about h1 {
+    font-size: 3rem;
+}
+
+.about p {
+    font-size: 2rem;
+}
+
+.about p + p {
+    font-size: 0.625rem;
+}
+
+.menu-sample {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.menu-sample h1 {
+    font-size: 2rem;
+}
+
+
+/* CSS */
+.menu-btn {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.menu-btn:hover,
+.menu-btn:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.menu-btn:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.cards {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    height: 350px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 5px;
+    background-color: #DC3535;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: #DC3535;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+    padding: 1rem 0;
+    margin-top: 4rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer span {
+    content: url('https://api.iconify.design/bi/fire.svg?color=%23dc3535');
+    margin: 0 5px;
+    color: #dc6a35;
+}
