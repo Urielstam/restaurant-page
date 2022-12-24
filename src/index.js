@@ -1,5 +1,8 @@
-import '../src/Home/home.css';
-import home from './Home/home';
+
+import './style.css';
+import home from './home';
+import menu from './menu';
+import contact from './contact';
 
 const content = document.querySelector('.content');
 
@@ -23,22 +26,40 @@ const createNav = () => {
 
 const createFooter = () => {
     const footer = document.createElement('footer');
-    footer.innerHTML = '©2022 Made with <span></span> by Uriel stamelman<';
+    footer.innerHTML = '©2022 Made with <span></span> by Uriel stamelman';
 
     return footer;
 }
 
-content.appendChild(createNav());
-content.appendChild(home());
-content.appendChild(createFooter());
+const createPage = (page) => {
+    content.appendChild(createNav());
+    content.appendChild(page());
+    content.appendChild(createFooter());
 
-const tags = document.querySelector('.tags');
-tags.addEventListener('click', (e) => {
-    if(e.target.innerText === 'Home') {
-        console.log('Home!')
-    }
-    else if (e.target.innerText === 'Menu') {
-        console.log('Menu!')
-    }
-})
+    const tags = document.querySelector('.tags');
+    tags.addEventListener('click', (e) => {
+        if(e.target.innerText === 'Home') {
+            while(content.hasChildNodes()) {
+                content.removeChild(content.firstChild);
+            }
+            createPage(home);
+        }
+        else if (e.target.innerText === 'Menu') {
+            while(content.hasChildNodes()) {
+                content.removeChild(content.firstChild);
+            }
+            createPage(menu);
+        }
+        else if (e.target.innerText === "Contact") {
+            while(content.hasChildNodes()) {
+                content.removeChild(content.firstChild);
+            }
+            createPage(contact);
+        }
+    });
+
+}
+
+createPage(home);
+
 

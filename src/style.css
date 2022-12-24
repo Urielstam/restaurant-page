@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:wght@300;400;700;900&display=swap');
 
+
+/* Cross page styles */
 * {
 	margin: 0;
 	padding: 0;
@@ -12,7 +14,6 @@
 
 body, html {
     height: 100%;
-    font-family: 'Roboto', sans-serif;
     font-family: 'Courgette', cursive;
 }
 
@@ -59,9 +60,27 @@ body, html {
       transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
   
-  .tags p:hover::after{
+.tags p:hover::after{
     height: calc(100% + 8px)
   }
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: #DC3535;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+    padding: 1rem 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer span {
+    content: url('https://api.iconify.design/bi/fire.svg?color=%23dc3535');
+    margin: 0 5px;
+    color: #dc6a35;
+}
+
+/* Home styles */
 
 .hero {
     color: white;
@@ -179,6 +198,7 @@ body, html {
 
 .menu-sample h1 {
     font-size: 2rem;
+    color: black;
 }
 
 
@@ -224,6 +244,7 @@ body, html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-bottom: 4rem;
 }
 
 .card {
@@ -240,20 +261,236 @@ body, html {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
+/* Menu styles */
 
-footer {
+.menu {
+    background-color: #070505;
     display: flex;
-    justify-content: center;
-    background-color: black;
-    color: #DC3535;
-    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
-    padding: 1rem 0;
-    margin-top: 4rem;
-    font-family: 'Roboto', sans-serif;
+    flex-direction: column;
 }
 
-footer span {
-    content: url('https://api.iconify.design/bi/fire.svg?color=%23dc3535');
-    margin: 0 5px;
-    color: #dc6a35;
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+header h1 {
+    color: white;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+    margin-top: 2rem;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+}
+
+.options {
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));   
+    gap: 1rem;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    position: relative;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+.option {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEF1F4;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+section h1 {
+    color: white;
+    font-size: 2rem;
+}
+
+
+.container {
+    width: 80vw;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEF1F4;
+    color: black;
+}
+
+.appetizer-container, .option:nth-child(1) {
+    background-color: #E03706;
+}
+
+.classic-container, .option:nth-child(2) {
+    background-color: #ADB4B8;
+}
+
+.specialty-container, .option:nth-child(4) {
+    background-color: #9D3A11;
+}
+
+#specialty-section {
+    margin-bottom: 4rem;
+}
+
+/* Contact */
+
+.contact {
+    height: 100vh;
+    background-image: url(https://cdn.pixabay.com/photo/2022/06/23/09/42/food-and-drink-industry-7279413_960_720.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(7, 5, 5, 0.6);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 2px;
+    padding: 2rem;
+}
+
+.form-container h1 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+    margin-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+}
+
+.details {
+    gap: 1rem;
+}
+
+input, textarea {
+    color: white;
+    background-color: rgba(7, 5, 5, 0.4);
+    border-bottom: 1px solid white;
+    padding: 1rem 0 1rem 1rem;
+    caret-color: #DC3535;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+form div {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* CSS */
+.contact-btn {
+    align-items: center;
+    background-color: rgba(7, 5, 5, 0.4);
+    border-radius: 2px;
+    box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 1 auto;
+    font-size: 1.2rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s,-webkit-box-shadow .2s;
+    white-space: nowrap;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.contact-btn:hover {
+  box-shadow: #DC3535 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.contact-details {
+    color: white;
+    text-shadow: -2px 3px 5px rgba(220,53,53,0.68);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgba(7, 5, 5, 0.6);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 2px;
+    padding: 2rem;
+}
+
+.contact-details div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }

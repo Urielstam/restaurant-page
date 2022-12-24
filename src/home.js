@@ -1,3 +1,5 @@
+
+
 const hero = () => {
 
     const heroSection = document.createElement('section');
