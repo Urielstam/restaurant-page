@@ -83,10 +83,12 @@ footer span {
 /* Home styles */
 
 .hero {
+    box-sizing: border-box;
+    width: 100%;
+    height: 80vh;
     color: white;
     padding: 4rem;
     flex-wrap: wrap;
-    height: 60vh;
     background-image:
     /* linear-gradient(black, rgba(0, 0, 0, 0.2)), */
     url(https://images.pexels.com/photos/6876075/pexels-photo-6876075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
@@ -159,7 +161,9 @@ footer span {
 }
 
 .about {
-    height: 500px;
+    box-sizing: border-box;
+    height: 70vh;
+    width: 100%;
     color: white;
     text-align: center;
     display: flex;
@@ -185,10 +189,11 @@ footer span {
 }
 
 .about p + p {
-    font-size: 0.625rem;
+    font-size: 1rem;
 }
 
 .menu-sample {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -240,7 +245,6 @@ footer span {
 }
 
 .cards {
-    width: 80%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
