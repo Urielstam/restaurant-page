@@ -35,10 +35,13 @@ export default function contact () {
     name.setAttribute('id', 'name');
     name.setAttribute('type', 'text');
     name.setAttribute('placeholder', 'Name');
+    name.required = true;
     const email = document.createElement('input');
     email.setAttribute('id', 'email');
     email.setAttribute('type', 'email');
     email.setAttribute('placeholder', 'Email');
+    email.required = true;
+
     
     const msg = document.createElement('textarea');
     msg.setAttribute('name', 'message');

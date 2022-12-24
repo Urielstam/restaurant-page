@@ -245,9 +245,12 @@ footer span {
 }
 
 .cards {
+    box-sizing: border-box;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 4rem;
     margin-bottom: 4rem;
 }
 
