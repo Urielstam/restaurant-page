@@ -37,6 +37,8 @@ const createPage = (page) => {
     content.appendChild(createFooter());
 
     const tags = document.querySelector('.tags');
+    const menuBtn = document.querySelector('.menu-btn');
+
     tags.addEventListener('click', (e) => {
         if(e.target.innerText === 'Home') {
             while(content.hasChildNodes()) {
@@ -57,6 +59,12 @@ const createPage = (page) => {
             createPage(contact);
         }
     });
+    menuBtn.addEventListener('click', (e) => {
+        while(content.hasChildNodes()) {
+            content.removeChild(content.firstChild);
+        }
+        createPage(menu);
+    })
 
 }
 
