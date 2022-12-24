@@ -60,8 +60,6 @@ const createPage = (page) => {
 
 }
 
-//Create page
-
 createPage(home);
 
 
